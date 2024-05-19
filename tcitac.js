@@ -201,7 +201,7 @@ function isValid(){
     setTimeout(function you_won(){    
         if(player_1 ==true){
         playerwon = playerOneName;
-        alert('Player - B Has Won 🥳🥳 ');
+        alert('Player - A Has Won 🥳🥳 ');
         alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
         resetGame();
         }
