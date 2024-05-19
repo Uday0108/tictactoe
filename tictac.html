@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tictac.css">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class="Container"> 
+        
+        <div style="display: flex; justify-content: center; align-items: center;" >
+            <input type="text" id="playerTeller" readonly value ="" style="color: black; font-size: 22px; font-family: sans-serif; text-align: center; background-color: #b24e4e; border: none; border-radius: 10px; margin-bottom: 15px; height: 40px; width: 360px;">
+        </div>
+
+        <div class="tilesContainer" >
+        <button id="btn_1" class="btns" onclick="setArrayValue_1()" onclick="changeButtonColor()" ></button>
+        <button id="btn_2" class="btns" onclick="setArrayValue_2()" onclick="changeButtonColor()" ></button>
+        <button id="btn_3" class="btns" onclick="setArrayValue_3()" onclick="changeButtonColor()" ></button>
+        <button id="btn_4" class="btns" onclick="setArrayValue_4()" onclick="changeButtonColor()" ></button>
+        <button id="btn_5" class="btns" onclick="setArrayValue_5()" onclick="changeButtonColor()" ></button>
+        <button id="btn_6" class="btns" onclick="setArrayValue_6()" onclick="changeButtonColor()" ></button>
+        <button id="btn_7" class="btns" onclick="setArrayValue_7()" onclick="changeButtonColor()" ></button>
+        <button id="btn_8" class="btns" onclick="setArrayValue_8()" onclick="changeButtonColor()" ></button>
+        <button id="btn_9" class="btns" onclick="setArrayValue_9()" onclick="changeButtonColor()" ></button>
+        </div>
+
+        <div class="pp" style="display: flex; justify-content: center; align-items: center;  margin-top: 10px; ">
+        <button class="reset" onclick="resetGame()" style="color: rgb(18, 15, 19); font-size: 20px; font-family: sans-serif; border: none; border-radius: 10px; background-color: rgb(41, 138, 228); height: 40px; width: 360px; margin-right: 5px;">RESET</button>
+        </div>
+
+    </div>
+    
+    <script src="tcitac.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(34, 33, 33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns:disabled{
+    color: black;
+}
+
+.btns{
+    font-family: sans-serif;
+    font-size: 35px;
+    background-color:  rgb(149, 201, 250) ;
+    border:;
+    border-color: ;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+}
+
+.tilesContainer{
+    display: grid;
+    grid-template-columns: repeat(3,120px);
+    grid-template-rows: repeat(3,120px);
+    justify-content: center;
+    align-items: center;
+}
+.btns:hover{
+    opacity: 0.8;
+}
