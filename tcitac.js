@@ -153,7 +153,7 @@ function isValid(){
             alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
             resetGame();
             }
-        },200);
+        },100);
         return;}
 
     mark = 0;
@@ -172,7 +172,7 @@ function isValid(){
             alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
             resetGame();
             }
-        },200);
+        },100);
         return;}
     }
     
@@ -192,7 +192,7 @@ function isValid(){
             alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
             resetGame();
             }
-        },200);
+        },100);
         return;}
     }
     
@@ -205,7 +205,7 @@ function isValid(){
         alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
         resetGame();
         }
-    },200);
+    },100);
 
     }
 
@@ -226,7 +226,7 @@ function isValid_2(){
         alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
         resetGame();  
         }  
-        }, 200); 
+        }, 100); 
         
         return;}
     
@@ -246,7 +246,7 @@ function isValid_2(){
             alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
             resetGame();
             }  
-        }, 200); 
+        }, 100); 
         return;}
     }
 
@@ -267,7 +267,7 @@ function isValid_2(){
         alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
         resetGame();
         }  
-    }, 200); 
+    }, 100); 
          
         return;}
     }
@@ -282,7 +282,7 @@ function isValid_2(){
         alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
         resetGame();
         }  
-    }, 200); 
+    }, 100); 
     }
 
 
