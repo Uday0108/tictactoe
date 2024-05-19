@@ -318,6 +318,6 @@ function updateText(){
     }
     else{
     pp.value = playerTwoName;
-    pp.style.backgroundColor = '#b24e4e';    
+    pp.style.backgroundColor = 'lightgreen';    
     }
 }
