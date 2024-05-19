@@ -197,6 +197,7 @@ function isValid(){
     }
     
     if(arr[2][0] =='X' && arr[0][2] =='X' && arr[1][1] =='X'){
+        player_1 = true;
     setTimeout(function you_won(){    
         if(player_1 ==true){
         playerwon = playerOneName;
