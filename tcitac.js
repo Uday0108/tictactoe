@@ -38,7 +38,7 @@ function setArrayValue_1(){
     changeButtonColor('btn_1');   
     updateText();   
     isValid();
-    isValid_2();
+    
 }
 function setArrayValue_2(){
     if(count%2==0)
@@ -49,7 +49,7 @@ function setArrayValue_2(){
     count++;
     changeButtonColor('btn_2');   
     updateText();
-    isValid_2();
+    
     isValid();
 }
 function setArrayValue_3(){
@@ -61,7 +61,7 @@ function setArrayValue_3(){
     count++;
     changeButtonColor('btn_3');   
     updateText();
-    isValid_2();
+    
     isValid();
 }
 function setArrayValue_4(){
@@ -73,7 +73,7 @@ function setArrayValue_4(){
     count++;
     updateText();
     changeButtonColor('btn_4');   
-    isValid_2();
+    
     isValid();
 }
 function setArrayValue_5(){
@@ -85,7 +85,7 @@ function setArrayValue_5(){
     count++;
     updateText();
     changeButtonColor('btn_5');   
-    isValid_2();
+    
     isValid();
 }
 function setArrayValue_6(){
@@ -97,7 +97,7 @@ function setArrayValue_6(){
     count++;
     updateText();
     changeButtonColor('btn_6');   
-    isValid_2();
+    
     isValid();
 }
 function setArrayValue_7(){
@@ -109,7 +109,7 @@ function setArrayValue_7(){
     count++;
     updateText();
     changeButtonColor('btn_7');   
-    isValid_2();
+    
     isValid();
 }
 function setArrayValue_8(){
@@ -121,7 +121,7 @@ function setArrayValue_8(){
     count++;
     updateText();
     changeButtonColor('btn_8');   
-    isValid_2();
+    
     isValid();
 }
 function setArrayValue_9(){
@@ -133,18 +133,21 @@ function setArrayValue_9(){
     count++;    
     updateText();
     changeButtonColor('btn_9');   
-    isValid_2();
+    
     isValid();
 }
 
 //validate each ver , Hor , and perpend
 function isValid(){
-    let mark = 0;
+    let playerOneCout = 0;
+    let playerTwoCout = 0;
     for(let i=0;i<3;i++){
+        if(arr[i][i]=='O'  )
+            playerTwoCout++;
         if(arr[i][i]=='X'  )
-            mark++;
+            playerOneCout++;
     }
-    if(mark==3){
+    if(playerOneCout==3){
         player_1 = true;
         setTimeout(function you_won(){    
             if(player_1 ==true){
@@ -153,17 +156,34 @@ function isValid(){
             alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
             resetGame();
             }
-        },100);
+        },80);
         return;}
 
-    mark = 0;
+        if(playerTwoCout==3){
+            player_2 = true;
+            setTimeout(function you_won(){    
+                if(player_2 ==true){
+                playerwon = playerOneName;
+                alert('Player - B Has Won 🥳🥳 ');
+                alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
+                resetGame();
+                }
+            },80);
+            return;}
+            
+    playerOneCout = 0;
+    playerTwoCout = 0;
     for(let i = 0;i<3;i++){ 
-       mark = 0;
+       playerOneCout = 0;
+       playerTwoCout = 0;
+
         for(let j=0;j<3;j++){
             if(arr[i][j] == 'X' )
-            mark++;
+            playerOneCout++;
+            if(arr[i][j] == 'O')
+                playerTwoCout++;
         }    
-        if(mark==3){
+        if(playerOneCout==3){
         player_1 = true;
         setTimeout(function you_won(){    
             if(player_1 ==true){
@@ -172,18 +192,32 @@ function isValid(){
             alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
             resetGame();
             }
-        },100);
+        },80);  
+        }else if(playerTwoCout==3){
+            player_2 = true;
+            setTimeout(function you_won(){    
+                if(player_2 ==true){
+                playerwon = playerOneName;
+                alert('Player - B Has Won 🥳🥳 ');
+                alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
+                resetGame();
+                }
+            },80);
         return;}
-    }
+        }
     
-    mark = 0;
+    playerOneCout = 0;
+    playerTwoCout = 0
     for(let i = 0;i<3;i++){ 
-        mark = 0;
+        playerOneCout = 0;
+        playerTwoCout = 0;
          for(let j=0;j<3;j++){
              if(arr[j][i] == 'X' )
-             mark++;
+             playerOneCout++;
+             if(arr[j][i] == 'O')
+             playerTwoCout++;
          }    
-        if(mark==3){
+        if(playerOneCout==3){
         player_1 = true;
         setTimeout(function you_won(){    
             if(player_1 ==true){
@@ -192,11 +226,23 @@ function isValid(){
             alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
             resetGame();
             }
-        },100);
+        },80);
         return;}
+        else if(playerTwoCout==3){
+            player_2 = true;
+            setTimeout(function you_won(){    
+                if(player_2 ==true){
+                playerwon = playerOneName;
+                alert('Player - B Has Won 🥳🥳 ');
+                alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
+                resetGame();
+                }
+            },80);
+            return;}
     }
-    
-    if(arr[2][0] =='X' && arr[0][2] =='X' && arr[1][1] =='X'){
+    playerOneCout = 0;
+    playerTwoCout = 0;
+    if(arr[2][0] =='X' && arr[2][0] == arr[1][1] && arr[0][2] == arr[1][1] ){
         player_1 = true;
     setTimeout(function you_won(){    
         if(player_1 ==true){
@@ -205,111 +251,24 @@ function isValid(){
         alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
         resetGame();
         }
-    },100);
+    },80);
 
     }
-
-}
-
-function isValid_2(){
-    let mark = 0;
-    for(let i=0;i<3;i++){
-        if(arr[i][i]=='O'  )
-            mark++;
-    }
-    if(mark == 3){
+    if(arr[2][0] =='O' && arr[2][0] == arr[1][1] && arr[0][2] == arr[1][1] ){
         player_2 = true;
-        setTimeout(function you_won(){    
-        if(player_2 == true){
-        playerwon = playerTwoName;
-        alert('Player - B Has Won 🥳🥳 ');
-        alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
-        resetGame();  
-        }  
-        }, 100); 
-        
-        return;}
-    
-    mark = 0;
-    for(let i = 0;i<3;i++){ 
-       mark = 0;
-        for(let j=0;j<3;j++){
-            if(arr[i][j] == 'O' )
-            mark++;
-        }    
-        if(mark==3){
-        player_2 = true;
-        setTimeout(function you_won(){    
-            if(player_2 == true){
-            playerwon = playerTwoName;
-            alert('Player - B Has Won 🥳🥳 ');
-            alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
-            resetGame();
-            }  
-        }, 100); 
-        return;}
-    }
-
-    mark=0;
-    for(let i = 0;i<3;i++){ 
-        mark = 0;
-         for(let j=0;j<3;j++){
-             if(arr[j][i] == 'O' )
-             mark++;
-         }    
-         if(mark==3){
-        player_2 = true;
-
-        setTimeout(function you_won(){    
-        if(player_2 == true){
-        playerwon = playerTwoName;
-        alert('Player - B Has Won 🥳🥳 ');
-        alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
-        resetGame();
-        }  
-    }, 100); 
-         
-        return;}
-    }
-    
-    //check perpend
-    if(arr[2][0] =='O' && arr[0][2] =='O' && arr[1][1] =='O'){
-    player_2 = true;
     setTimeout(function you_won(){    
-        if(player_2 == true){
-        playerwon = playerTwoName;
+        if(player_2 ==true){
+        playerwon = playerOneName;
         alert('Player - B Has Won 🥳🥳 ');
         alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
         resetGame();
-        }  
-    }, 100); 
-    }
-
-
-
-}
-
-
-/*
-function you_won(){    
- 
-    var playerwon = 'draw';
-    if(player_1 ==true){
-    playerwon = playerOneName;
-    alert('You Won 🥳🥳 A');
-    alert('click OK to restart the Game');
+        }
+    },80);
 
     }
-    else if(player_2 == true){
-    playerwon = playerTwoName;
-    alert('You Won 🥳🥳 B');
-    alert('click OK to restart the Game');  
     
-    }  
+
 }
-*/
-
-
 
 function updateText(){
     var pp = document.getElementById('playerTeller');
