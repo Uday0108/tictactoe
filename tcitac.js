@@ -282,7 +282,7 @@ function isValid(){
                     drawCount++;
             }
         }
-        if(drawCount == 9){
+        if(drawCount == 9  && player_1==false && player_2 == false ){
             {draw = true;
                 setTimeout(function you_won(){    
                     if(draw ==true){
