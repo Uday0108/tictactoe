@@ -5,7 +5,7 @@ function resetGame(){
 function changeButtonColor(buttonID) {
     var ele = document.getElementById(buttonID);
     if(count%2!=0){   
-        ele.style.backgroundColor = '#b24e4e';
+        ele.style.backgroundColor = 'red';
         ele.textContent = 'X';
         ele.disabled = true;
     }
@@ -24,7 +24,9 @@ var playerTwoName = 'B';
 let count = 0;
 var player_1 = false;
 var player_2 = false;
-var arr  = [['','',''],['','',''],['','','']];
+var draw = false;
+
+var arr  = [['.','.','.'],['.','.','.'],['.','.','.']];
 var pp = document.getElementById('playerTeller');
 pp.value = playerOneName;
 
@@ -141,10 +143,11 @@ function setArrayValue_9(){
 function isValid(){
     let playerOneCout = 0;
     let playerTwoCout = 0;
+
     for(let i=0;i<3;i++){
         if(arr[i][i]=='O'  )
             playerTwoCout++;
-        if(arr[i][i]=='X'  )
+        else if(arr[i][i]=='X'  )
             playerOneCout++;
     }
     if(playerOneCout==3){
@@ -159,7 +162,7 @@ function isValid(){
         },80);
         return;}
 
-        if(playerTwoCout==3){
+        else if(playerTwoCout==3){
             player_2 = true;
             setTimeout(function you_won(){    
                 if(player_2 ==true){
@@ -171,8 +174,10 @@ function isValid(){
             },80);
             return;}
             
+            
     playerOneCout = 0;
     playerTwoCout = 0;
+
     for(let i = 0;i<3;i++){ 
        playerOneCout = 0;
        playerTwoCout = 0;
@@ -180,8 +185,8 @@ function isValid(){
         for(let j=0;j<3;j++){
             if(arr[i][j] == 'X' )
             playerOneCout++;
-            if(arr[i][j] == 'O')
-                playerTwoCout++;
+            else if(arr[i][j] == 'O')
+            playerTwoCout++;
         }    
         if(playerOneCout==3){
         player_1 = true;
@@ -208,13 +213,14 @@ function isValid(){
     
     playerOneCout = 0;
     playerTwoCout = 0
+
     for(let i = 0;i<3;i++){ 
         playerOneCout = 0;
         playerTwoCout = 0;
          for(let j=0;j<3;j++){
              if(arr[j][i] == 'X' )
              playerOneCout++;
-             if(arr[j][i] == 'O')
+             else if(arr[j][i] == 'O')
              playerTwoCout++;
          }    
         if(playerOneCout==3){
@@ -239,7 +245,10 @@ function isValid(){
                 }
             },80);
             return;}
+
     }
+    
+
     playerOneCout = 0;
     playerTwoCout = 0;
     if(arr[2][0] =='X' && arr[2][0] == arr[1][1] && arr[0][2] == arr[1][1] ){
@@ -264,9 +273,29 @@ function isValid(){
         resetGame();
         }
     },80);
-
     }
     
+    if(count >= 8){
+        let drawCount = 0;
+        for(let i=0;i<3;i++){
+            for(let j=0;j<3;j++){
+                if(arr[i][j] !='.' )
+                    drawCount++;
+            }
+        }
+        if(drawCount == 9){
+            {draw = true;
+                setTimeout(function you_won(){    
+                    if(draw ==true){
+                    playerwon = playerOneName;
+                    alert(" It's a Draw 🤝🤝");
+                    alert(" Game Has Finished \n  Click 'OK' to restart the Game");  
+                    resetGame();
+                    }
+                },80);
+                }
+        }
+    }
 
 }
 
@@ -274,10 +303,11 @@ function updateText(){
     var pp = document.getElementById('playerTeller');
     if(count%2===0){
     pp.value = playerOneName;
-    pp.style.backgroundColor = '#b24e4e';
+    pp.style.backgroundColor = 'red';
     }
     else{
     pp.value = playerTwoName;
     pp.style.backgroundColor = 'lightgreen';    
     }
 }
+
