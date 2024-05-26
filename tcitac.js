@@ -17,7 +17,6 @@ function changeButtonColor(buttonID) {
 
 }
 
-
 var playerOneName = 'A';
 var playerTwoName = 'B';
 
