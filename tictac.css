@@ -1,5 +1,5 @@
 body{
-    background-image: url('wallhaven-486dlj_2560x1080.png');
+    background-image: url('images.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -13,7 +13,7 @@ body{
 .btns{
     font-family: sans-serif;
     font-size: 35px;
-    background-color:  rgb(149, 201, 250) ;
+    background-color:  rgb(255, 255, 255) ;
     border:;
     border-color: ;
     border-radius: 8px;
