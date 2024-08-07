@@ -5,7 +5,7 @@ function resetGame(){
 function changeButtonColor(buttonID) {
     var ele = document.getElementById(buttonID);
     if(count%2!=0){   
-        ele.style.color = 'red';
+        ele.style.color = '#f33434';
         ele.textContent = 'X';
         ele.disabled = true;
     }
@@ -303,10 +303,11 @@ function updateText(){
     var pp = document.getElementById('playerTeller');
     if(count%2===0){
     pp.value = playerOneName;
-    pp.style.backgroundColor = 'red';
+    pp.style.backgroundColor = '#f33434';
     }
     else{
     pp.value = playerTwoName;
     pp.style.backgroundColor = 'lightgreen';    
     }
 }
+
