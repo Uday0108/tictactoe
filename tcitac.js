@@ -5,17 +5,18 @@ function resetGame(){
 function changeButtonColor(buttonID) {
     var ele = document.getElementById(buttonID);
     if(count%2!=0){   
-        ele.style.backgroundColor = 'red';
+        ele.style.color = 'red';
         ele.textContent = 'X';
         ele.disabled = true;
     }
     else{
-        ele.style.backgroundColor = 'lightgreen';
+        ele.style.color = 'lightgreen';
         ele.textContent = 'O';
         ele.disabled = true;
     }
 
 }
+
 
 var playerOneName = 'A';
 var playerTwoName = 'B';
@@ -274,7 +275,7 @@ function isValid(){
     },80);
     }
     
-    if(count >= 8){
+    if(count >= 8 && player_1==false && player_2 == false){
         let drawCount = 0;
         for(let i=0;i<3;i++){
             for(let j=0;j<3;j++){
@@ -282,7 +283,7 @@ function isValid(){
                     drawCount++;
             }
         }
-        if(drawCount == 9  && player_1==false && player_2 == false ){
+        if(drawCount == 9){
             {draw = true;
                 setTimeout(function you_won(){    
                     if(draw ==true){
@@ -309,4 +310,3 @@ function updateText(){
     pp.style.backgroundColor = 'lightgreen';    
     }
 }
-
